@@ -1,0 +1,195 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #EFF1FA;
+    color: #0A3871;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1% 0;
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    left: 4%;
+}
+
+.principal {
+    width: 100vw;
+    height: 81vh;
+    background: linear-gradient(#fefefe, #888888);
+    overflow: hidden;
+}
+
+.contenedorElementos {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.texto {
+    width: 100%;
+    height: 55vh;
+    font-size: 20px;
+    outline: none;
+    margin-bottom: 2%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.texto::placeholder {
+    color: #888888;
+}
+
+.observacion {
+    color: #495057;
+    margin-bottom: 2%;
+}
+
+
+
+.botones{
+    display: flex;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.botonEncriptar,
+.botonDesencriptar {
+    width: 100%;
+    height: 60px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    font-family: "inter";
+    font-size: 20px;
+    font-weight: bold;
+    transition: 1s all;
+}
+
+.botonEncriptar {
+    background: #0A3871;
+    color: #D8DFE8;
+    margin-right: 2%;
+}
+
+.botonDesencriptar {
+    background: #D8DFE8;
+    color: #0A3871;
+}
+
+.botonEncriptar:hover {
+    background: linear-gradient(45deg, #e4e3e9, #2c20d3);
+    cursor: pointer;
+}
+
+.botonDesencriptar:hover {
+    background: linear-gradient(45deg, #c54c4c, #e4e3e9);
+    cursor: pointer;
+}
+
+
+
+
+.mensaje {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    height: 73vh;
+    background-color: #f0f0f0;
+    border-radius: 32px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    margin: 0 0 0 15%;
+}
+
+.mensaje img {
+    position: relative;
+    top: 10%;
+    width: 70%;
+    height: 40%;
+}
+
+.mensajeEncriptado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.mensajeEncriptado .msgUno {
+    width: 50%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mensajeEncriptado .msgDos {
+    width: 50%;
+}
+
+footer {
+    width: 100vw;
+    padding: 1% 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: "inter";
+    font-size: 15px;
+    text-align: center;
+    background: url(imagen/bg.jpg);
+}
+
+@media only screen and (max-width: 1280px) {
+    .principal {
+        height: auto;
+    }
+
+    .contenedorElementos {
+        height: auto;
+    }
+
+    .texto {
+        font-size: 15px;
+        height: 80vh;
+    }
+
+    .botonEncriptar,
+    .botonDesencriptar {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .botones {
+        margin-bottom: 5%;
+    }
+
+    .observacion {
+        font-size: 12px;
+    }
+
+    .mensaje {
+        height: 95%;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    .mensajeEncriptado .msgUno, .msgDos {
+        font-size: 10px;
+    }
+}
