@@ -34,7 +34,7 @@ header {
     margin-left: 5%;
 }
 
-.texto {
+.textoOrigen {
     width: 100%;
     height: 55vh;
     font-size: 20px;
@@ -45,7 +45,7 @@ header {
     box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
 }
 
-.texto::placeholder {
+.textoOrigen::placeholder {
     color: #888888;
 }
 
@@ -54,14 +54,11 @@ header {
     margin-bottom: 2%;
 }
 
-
-
 .botones{
     display: flex;
     margin-bottom: 2%;
     width: 100%;
 }
-
 .botonEncriptar,
 .botonDesencriptar {
     width: 100%;
@@ -73,32 +70,25 @@ header {
     font-weight: bold;
     transition: 1s all;
 }
-
 .botonEncriptar {
     background: #0A3871;
     color: #D8DFE8;
     margin-right: 2%;
 }
-
 .botonDesencriptar {
     background: #D8DFE8;
     color: #0A3871;
 }
-
 .botonEncriptar:hover {
     background: linear-gradient(45deg, #e4e3e9, #2c20d3);
     cursor: pointer;
 }
-
 .botonDesencriptar:hover {
     background: linear-gradient(45deg, #c54c4c, #e4e3e9);
     cursor: pointer;
 }
 
-
-
-
-.mensaje {
+.contenedorMensaje {
     display: flex;
     justify-content: center;
     width: 60%;
@@ -113,33 +103,60 @@ header {
     margin: 0 0 0 15%;
 }
 
-.mensaje img {
-    position: relative;
-    top: 10%;
-    width: 70%;
-    height: 40%;
-}
-
-.mensajeEncriptado {
+.contenedorMensaje .contenedorInicial {
+    height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     width: 100%;
-    position: absolute;
-    top: 55%;
+    position: relative;
+    top: 10%;
     align-items: center;
     text-align: center;
     gap: 20px;
 }
 
-.mensajeEncriptado .msgUno {
+.contenedorInicial .msgUno {
     width: 50%;
     font-size: 20px;
     font-weight: bold;
 }
-
-.mensajeEncriptado .msgDos {
+.contenedorInicial .msgDos {
     width: 50%;
+}
+
+.contenedorInicial .botonCopiar {
+    width: 50%;
+    height: 60px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    font-family: "inter";
+    font-size: 20px;
+    font-weight: bold;
+    transition: 1s all;
+    background: #0A3871;
+    color: #D8DFE8;
+    margin-top: 10%;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+}
+.contenedorInicial .botonCopiar:hover {
+    background: linear-gradient(45deg, #e4e3e9, #2c20d3);
+    /*cursor: pointer;*/
+}
+
+.contenedorFinal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
 }
 
 footer {
@@ -162,26 +179,32 @@ footer {
         height: auto;
     }
 
-    .texto {
+    .textoOrigen {
         font-size: 15px;
         height: 80vh;
     }
 
-    .botonEncriptar,
-    .botonDesencriptar {
-        height: 40px;
-        font-size: 12px;
+    .textoDestino {
+        font-size: 15px;
+        height: 80vh;
     }
 
     .botones {
         margin-bottom: 5%;
     }
 
+    .botonEncriptar,
+    .botonDesencriptar {
+    
+        height: 40px;
+        font-size: 12px;
+    }
+
     .observacion {
         font-size: 12px;
     }
 
-    .mensaje {
+    .contenedorMensaje {
         height: 95%;
     }
 
@@ -189,7 +212,12 @@ footer {
         font-size: 10px;
     }
 
-    .mensajeEncriptado .msgUno, .msgDos {
+    .contenedorInicial .msgUno, .msgDos {
         font-size: 10px;
+    }
+    
+    .contenedorInicial .botonCopiar {
+        height: 50px;
+        font-size: 12px;
     }
 }

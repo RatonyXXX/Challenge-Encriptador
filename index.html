@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Tony Challenge Encriptador</title>
 </head>
+
 <body>
     <header>
         <div class="encabezado">
@@ -16,29 +18,35 @@
     <main>
         <section class="principal">
             <div class="contenedorElementos">
-                <textarea id="origen" class="texto" placeholder="Ingrese el texto aquí"></textarea>
+
+
+                <textarea id="textoOrigen" class="textoOrigen" placeholder="Ingrese el texto aquí"></textarea>
+
                 <div class="observacion">
                     &copy Solo letras minúsculas y sin acentos
                 </div>
+
                 <div class="botones">
                     <input type="button" value="Encriptar" class="botonEncriptar" onclick="fncEncriptar();">
                     <input type="button" value="Desencriptar" class="botonDesencriptar" onclick="fncDesencriptar();">
                 </div>
-                
-                <p id="destino"></p>
-                <div class="mensaje">
-                    
-                    <img id="muñeco" src="imagen/Muñeco.png" alt="">
-                    
-                    <div class="mensajeEncriptado">
-                        
-                        <p class="msgUno">Ningún mensaje fue encontrado</p>
-                        <p class="msgDos">Ingresa el texto que desees encriptar o desencriptar</p>
-                        
+
+                <div class="contenedorMensaje">
+
+                    <div class="contenedorInicial">
+                        <img id="monito" src="imagen/Muñeco.png" alt="">
+                        <p id="msgUno" class="msgUno">Ningún mensaje fue encontrado</p>
+                        <p id="msgDos" class="msgDos">Ingresa el texto que desees encriptar o desencriptar</p>    
+                        <input type="button" value="Copiar" id="botonCopiar" class="botonCopiar" 
+                            onclick="fncCopiar();" disabled>
                     </div>
-                    <input type="button" value="Copiar" id="copiar" class="botonCopiar" style="display: none;" onclick="fncCopiar();">    
+                    
+                    <div class="contenedorFinal">
+                        <p id="textoDestino"></p>
+                    </div>
+
                 </div>
-                
+
             </div>
         </section>
     </main>
@@ -48,4 +56,5 @@
     </footer>
     <script src="javascript.js"></script>
 </body>
+
 </html>

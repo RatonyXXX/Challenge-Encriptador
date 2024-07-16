@@ -1,56 +1,48 @@
-const txtOrigen = document.getElementById("origen");
-const txtDestino = document.getElementById("destino");
-const muñeco = document.getElementById("muñeco");
-const btnCopiar = document.getElementById("copiar");
-const msgEncriptado = document.getElementsByClassName("mensajeEncriptado");
+const txtOrigen = document.getElementById("textoOrigen");
+const txtDestino = document.getElementById("textoDestino");
+const imgMonito = document.getElementById("monito");
+const btnCopiar = document.getElementById("botonCopiar");
+const msgUno = document.getElementById("msgUno");
+const msgDos = document.getElementById("msgDos");
 
-// Prevenir entrada de mayúsculas y caracteres no permitidos
+// Mayusculas, caracters especiales
 txtOrigen.addEventListener("input", function () {
     let txtNuevo = txtOrigen.value.toLowerCase();
     txtNuevo = txtNuevo.replace(/[^a-z\s]/g, "");
     txtOrigen.value = txtNuevo;
 });
 
-// Función para encriptar
+// Encriptar
 function fncEncriptar() {
     const txtReemplazo = { 'e': 'enter', 'i': 'imes', 'a': 'ai', 'o': 'ober', 'u': 'ufat' };
     let txtNuevo = txtOrigen.value;
     txtNuevo = txtNuevo.replace(/[aeiou]/g, matched => txtReemplazo[matched]);
     txtDestino.textContent = txtNuevo;
-    
     ocultarMostrarElementos();
-    //copiarBtn.disabled = false;
-    //muñeco.style.opacity = 0.1;
 }
 
-// Función para desencriptar
+// Desencriptar
 function fncDesencriptar() {
     const txtReemplazo = { 'enter': 'e', 'imes': 'i', 'ai': 'a', 'ober': 'o', 'ufat': 'u' };
     let txtNuevo = txtOrigen.value;
     txtNuevo = txtNuevo.replace(/(enter|imes|ai|ober|ufat)/g, matched => txtReemplazo[matched]);
     txtDestino.textContent = txtNuevo;
-    
     ocultarMostrarElementos();
-    //copiarBtn.disabled = false;
-    //muñeco.style.opacity = 0.1;
 }
 
-
+// Ocultar y mostrar elementos
 function ocultarMostrarElementos() {
-    /*imgMuñeco.style.display = 'none';
-    msgUno.style.display = 'none';
-    msgDos.style.display = 'none';
-    txtDestino.style.fontSize = '24px'; // Tamaño de fuente más grande
-    txtDestino.style.textAlign = 'center';
-    txtDestino.style.margin = 'auto';
-    divMensaje.style.justifyContent = 'center';*/
-    msgEncriptado.style.display = 'none';
-
-    btnCopiar.style.display = 'inline-block'; // Mostrar botón Copiar
-    divMensaje.style.opacity = 1; // Mostrar mensaje
+    imgMonito.style.opacity = 0.1;
+    msgUno.style.opacity = 0;
+    msgDos.style.opacity = 0;
+    txtDestino.style.fontSize = '20px';
+    btnCopiar.style.opacity = 1;
+    btnCopiar.disabled = false;
+    btnCopiar.style.cursor = "pointer";
+    /*ajustarTextoAlContenedor();*/
 }
 
-// Función para copiar al portapapeles
+// Copiar
 function fncCopiar() {
     const range = document.createRange();
     range.selectNode(txtDestino);
@@ -59,3 +51,18 @@ function fncCopiar() {
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
 }
+
+/*
+function ajustarTextoAlContenedor() {
+    var contenedor = document.querySelector('.contenedorInicial');
+    var texto = document.getElementById('textoDestino');
+    var contenedorWidth = contenedor.offsetWidth;
+    var contenedorHeight = contenedor.offsetHeight;
+    
+    var fontSize = Math.min(contenedorWidth / 10, contenedorHeight / 2);
+    texto.style.fontSize = fontSize + 'px';
+}
+
+window.onload = ajustarTextoAlContenedor;
+window.onresize = ajustarTextoAlContenedor;
+*/
